@@ -22,7 +22,7 @@ class TestAPI(unittest.TestCase):
 
     
     def testAPI2(self): 
-        self.assertEqual(main('yukaitan'),['Repo: ssw567 Number of commits:1', 'Repo: ssw810 Number of commits:1', 'Repo: TriangleTest-ssw567 Number of commits:11'])
+        self.assertEqual(main('yukaitan'),['Repo: ssw567 Number of commits:1', 'Repo: ssw810 Number of commits:1', 'Repo: TriangleTest-ssw567 Number of commits:10', 'Repo: ssw567-API Number of commits:10'])
         
     
         
