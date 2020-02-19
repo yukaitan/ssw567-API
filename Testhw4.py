@@ -21,9 +21,8 @@ class TestAPI(unittest.TestCase):
         
 
     
-    def testNotATriangleC(self): 
-        self.assertEqual(main('yukaitan'),['Repo: hellogitworld Number of commits:30', 'Repo: helloworld Number of commits:6', 'Repo: Mocks Number of commits:10', 'Repo: Project1 Number of commits:2', 'Repo: threads-of-life Number of commits:1'])
-        
+    def testAPI2(self): 
+        self.assertEqual(main('yukaitan'),['Repo: ssw567 Number of commits:1', 'Repo: ssw810 Number of commits:1', 'Repo: TriangleTest-ssw567 Number of commits:8'])
         
     
         
