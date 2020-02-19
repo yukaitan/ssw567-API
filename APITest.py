@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Create on Tue Feb 18 15:53:16 2020
+Created on Tue Feb 18 15:53:16 2020
 
 @author: yukai
 """
@@ -22,7 +22,7 @@ class TestAPI(unittest.TestCase):
 
     
     def testAPI2(self): 
-        self.assertEqual(main('yukaitan'),['Repo: ssw567 Number of commits:1', 'Repo: ssw810 Number of commits:1', 'Repo: TriangleTest-ssw567 Number of commits:10', 'Repo: ssw567-API Number of commits:10'])
+        self.assertEqual(main('yukaitan'),['Repo: ssw567 Number of commits:1', 'Repo: ssw567-API Number of commits:16', 'Repo: ssw810 Number of commits:1', 'Repo: TriangleTest-ssw567 Number of commits:10'])
         
     
         
