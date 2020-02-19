@@ -8,7 +8,7 @@ Created on Tue Feb 18 15:53:16 2020
 
 import unittest
 
-from hw4 import main
+from API import main
 
 # This code implements the unit test functionality
 # https://docs.python.org/3/library/unittest.html has a nice description of the framework
