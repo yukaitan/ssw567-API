@@ -58,7 +58,7 @@ class TestAPI(unittest.TestCase):
     @patch('requests.get')
     def test_get_repo_times(self, mock_get):
 
-        with open('json_times1.json') as f:
+        with open('json_times.json') as f:
 
             json_times = json.load(f)
 
