@@ -5,29 +5,89 @@ Created on Tue Feb 18 15:53:16 2020
 
 @author: yukai
 """
-
+from unittest.mock import Mock, patch
 import unittest
-
+from unittest import mock
 from API import main
+from API import get_jason_name
+from API import get_repo_name
+import json
+
+
+
 
 # This code implements the unit test functionality
 # https://docs.python.org/3/library/unittest.html has a nice description of the framework
 
+
+# Standard library imports...
+
+# Third-party imports...
+from nose.tools import  assert_list_equal
+
+# Local imports...
+
+
+
 class TestAPI(unittest.TestCase):
-    # define multiple sets of tests as functions with names that begin
 
-    def testAPI1(self): 
-        self.assertEqual(main('richkempinski'),['Repo: hellogitworld Number of commits:30', 'Repo: helloworld Number of commits:6', 'Repo: Mocks Number of commits:10', 'Repo: Project1 Number of commits:2', 'Repo: threads-of-life Number of commits:1'])
+    @patch('requests.get')
+    def test_get_repo_name(self, mock_get):
+
+        with open('json_name.json') as f:
+
+            json_name = json.load(f)
+
+        # with open('jason_times.txt') as g:
+
+        #     json_times = g
+            
+        # Configure the mock to return a response with an OK status code.
+        #mock_get.return_value.ok = True
+
+        mock_get.return_value.json.return_value = json_name
+        # Call the service, which will send a request to the server.
         
+        
+        response = get_repo_name(json_name)
+        # If the request is sent successfully, then I expect a response to be returned.
+        
+        assert_list_equal(response, ['hellogitworld', 'helloworld', 'Mocks', 'Project1', 'threads-of-life'])
 
     
-    def testAPI2(self): 
-        self.assertEqual(main('yukaitan'),['Repo: ssw567 Number of commits:1', 'Repo: ssw567-API Number of commits:16', 'Repo: ssw810 Number of commits:1', 'Repo: TriangleTest-ssw567 Number of commits:10'])
+    @patch('requests.get')
+    def test_get_repo_times(self, mock_get):
+
+        with open('json_times1.json') as f:
+
+            json_times = json.load(f)
+
+        # with open('jason_times.txt') as g:
+
+        #     json_times = g
+            
+        # Configure the mock to return a response with an OK status code.
+        #mock_get.return_value.ok = True
+
+        mock_get.return_value.json.return_value = json_times
+        # Call the service, which will send a request to the server.
         
+        
+
+        response = len(json_times)
+        # If the request is sent successfully, then I expect a response to be returned.
+        
+        assert_list_equal([response], [1])
+
     
-        
     
 
 if __name__ == '__main__':
-    print('Running unit tests')
-    unittest.main()
+    unittest.main()        
+    
+        
+    
+
+# if __name__ == '__main__':
+#     print('Running unit tests')
+#     unittest.main()
